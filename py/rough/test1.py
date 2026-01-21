@@ -1066,3 +1066,20 @@ ValueError
 Warning
 ZeroDivisionError
 
+## is vs == 
+#is operator: Tests for object identity. It returns True if both operands point to the same memory address (i.e., they are the exact same object) and False otherwise.
+#== operator: Tests for value equality. It returns True if the objects have the same value, even if they are stored in different memory locations
+a=["Retention", 3, None]
+b=a
+z=["Retention", 3, None]
+print(id(a))
+print(id(b))
+print(id(z))
+
+print(a==b)
+print(a==z)
+print(z==b)
+
+print(a is b)
+print(a is z)
+print(z is b)

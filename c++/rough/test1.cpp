@@ -885,3 +885,6 @@ This combination is essential for competitive programming where I/O performance 
 //BINARY SEARCH ALGORITHM 
 only applied on shorted(assending or dess.) array
 //If a desire danswer can be made into a range and and there is a way to verify if the answer is valid or not then there we can use the binarry 
+
+STL!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
