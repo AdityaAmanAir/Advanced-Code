@@ -1,4 +1,13 @@
 Hiii, this is my 1st txt file using python
  I am learning I/o
 old text in file got overwrite by these text. 
-Because we are using 'w' that is write in the function
+Because we are using 'w' that is write in the functionhh112233
+lol0000011111
+8888888
+99999999
+0000000000
+111111
+222222
+555555555
+4444444
+intelligence

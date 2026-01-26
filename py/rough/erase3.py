@@ -11,5 +11,5 @@ for x in f:
 # Get user input
 y = input("Enter text to append: ")
 
-# Append to fileint
+# Append to file
 f.write(y + "\n")
