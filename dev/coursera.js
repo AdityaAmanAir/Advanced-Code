@@ -277,9 +277,9 @@ function kklol1(){
 kklol1();
 
 //Normal function //////////////////////////////////////
-var llkol2 = function {
+var llkol2 = function() {
     console.log("llkol2")
-}
+};
 llkol2();
 
 //immediately Invoked Function Expression 
