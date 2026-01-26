@@ -11,3 +11,6 @@ myenv/
 .venv/
 .vscode
 stocks_env
+/py/venv
+.venv
+/.venv
