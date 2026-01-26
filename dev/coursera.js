@@ -295,5 +295,18 @@ llkol2();
    console.log("I want to see the global scope! Let me out!");
   };
   window.doer = obj;
- });
+ })(window);
  doer.dreamOn();
+
+////////Assignment////////////
+
+ (function (){
+    var assig_names=["Aditya Aman", "James", "John", "Jane", "Michael", "Jennifer", "Sarah", "joshua", "Emily", "Robert", "Jessica"];
+    for(var i in assig_names){
+        if(assig_names[i][0]=="j" || assig_names[i][0]=='J'){
+            console.log("Goodbye "+assig_names[i])
+        }else{
+            console.log("Hello "+ assig_names[i])
+        }
+    }
+ })();
