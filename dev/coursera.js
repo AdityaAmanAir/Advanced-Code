@@ -310,3 +310,163 @@ llkol2();
         }
     }
  })();
+
+
+console.log( document.getElementById("title"));
+function sayhelloFun(){
+    var name123 = document.getElementById("nameBox").value;
+    if (name123=="AI"|| name123=="ai" || name123=="Ai" || name123=="aI"){
+        document.getElementById("title").textContent="Aditya Aman is The Best SDE";
+    }else{
+    var message1 = "Hello "+ name123 + " : This is direct to .textContent";
+    var message2 = "<h3>Hello "+ name123 + " : This is direct to .innerHTML<\h3>";
+    console.log(message1) // ofCourse on console
+    document
+        .getElementById("contentArea")
+        .textContent = message1;
+    console.log(message2)    
+    document.getElementById("contentContainer").innerHTML = message2;   
+    }
+}
+
+function copybabe(){
+    var somebabe=document.getElementById("nameBox2").value;
+    document.getElementById("contentContainer2").textContent="Ohoo Babe!!! Learning JavaScript";
+
+}
+function alertboi(){
+    // this.textContent="You should not click on any Link or Button!";
+    document.getElementById("cont3").textContent="You are PlayFulllll!!!";
+}
+function alertboi2(){
+    document.getElementById("cont4").textContent="Are you PlayFullll???";
+}
+document.querySelector("#b3").onclick=alertboi;
+document.querySelector("#b4").addEventListener("click",alertboi2);
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+//The DOMContentLoaded event fires when the initial HTML document has been completely loaded and parsed, and the DOM is fully constructed, without waiting for external resources like images, stylesheets, frames, or async scripts to finish loading., like shown below:
+document.addEventListener("DOMContentLoaded", function(event){
+document.getElementById("contlast").textContent="Html Loaded";
+console.log(event);
+}
+);
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+document.querySelector("body").addEventListener("mousemove", function (event){
+    if(event.shiftKey === true){
+    console.log("x : "+ event.clientX);
+    console.log("y : "+ event.clientY);}
+});
+
+/// HTTP 
+// URN : Uniform Resource Name ,          eg : HTML/CSS/javascript/web Developer/Aditya Aman/Air
+// URI : Uniform Resource Identifier ,    eg : /offical_web_site/index.html
+// URL : Uniform Resource Locator,        eg : http://www.adityaaman.neocities.org/index.html
+
+// HTTP Request Structure (GET)
+// GET /index.html?firstName=Aditya&last=Aman HTTP/1.1 or HTTP/2 or HTTP/3
+
+// HTTP Request Structure (POST)
+// POST <request-target> HTTP/1.1
+
+// HTTP Response Structure
+// HTTP/1.1 200 ok
+//          400 Not Found
+//          403 Forbidden
+//          500 internal error
+//          etc..
+
+// 1xx: Informational (request received, continue processing). 
+// 2xx: Success (request successfully received and understood). 
+// 3xx: Redirection (further action needed to complete the request). 
+// 4xx: Client Error (request contains incorrect syntax or cannot be fulfilled). 
+// 5xx: Server Error (server failed to fulfill a valid request). 
+
+
+ ///////////////////////////////
+ //////////////////////////////
+ //AJAX///////////////////////
+ ////////////////////////////
+(function (global){
+var ajaxUtils={};
+ ///Returns an HTTP request object///
+function getRequestObject(){
+    if(window.XMLHttpRequest){
+        return (new XMLHttpRequest());
+    }else if(window.ActiveXObject){
+        return (new ActiveXObject("Microsoft.XMLHTTP"));
+    }else{
+        global.alert("Ajax is not supported");
+        return (null);
+    }
+ }
+ 
+ //Makes an Ajax GET request to 'requestUrl'
+ ajaxUtils.sendGetRequest = function(requestUrl, responseHandler){
+    var request = getRequestObject();
+    request.onreadystatechange= function(){
+        handleResponse(request, responseHandler);
+    };
+    request.open("GET", requestUrl, true);
+    request.send(null);
+ };
+//Only calls user provided 'responseHandler'
+//function if response is ready
+// and not an error
+function handleResponse(request,responseHandler){
+    if((request.readyState==4)&&(request.status == 200)){
+        responseHandler(request);
+    }
+}
+// Expose utility to the global object
+global.$ajaxUtils =ajaxUtils
+})(window);
+document.addEventListener("DOMContentLoaded", function(event){
+    document.querySelector("#b5").addEventListener("click", function(){
+        var self = this;
+        var name = "";
+
+        $ajaxUtils.sendGetRequest("/name.txt", function(request){
+            self.name = request.responseText;
+            console.log(self.name);
+            document.querySelector("#contentX").innerHTML="<h2>Hello "+self.name +"!<\h2>";
+
+        });
+    });
+});
+
+
+
+
+
+ /////////////////////////////////////////////////////
+ ////////////////STRUCTURE OF A BROWSER///////////////
+ /////////////////////////////////////////////////////
+ /////////////////////////////////////////////////////
+ ///////////////////USER INTERFACE////////////////////
+ ///////////////////BROWSER ENGINE////////////////////
+ //////////////////RENDERING ENGINE///////////////////
+ /////////////////////////////////////////////////////
+ //NETWORKING////JAVASRIPT INTERPRETER////UI BACKEND//
+ /////////////////////////////////////////////////////
+ //////////////////DATA PERSISTENCE///////////////////
+ /////////////////////////////////////////////////////
+
+ //JSON
+ // JavaSript object Notation similer to xml
+//JSON is the lightweight sta representation
+//Great format dor passing data from server to clint & back
+//JSON is based on java script literal
+////// BUT JSON is NOT js object literal
+
